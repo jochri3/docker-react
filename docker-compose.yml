@@ -22,8 +22,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /app/front-end/node_modules
-      - .:/app/front-end
+      - /app/frontend/node_modules
+      - .:/app/frontend
     tty: true
 
   # test runner
@@ -32,7 +32,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - /app/front-end/node_modules
-      - .:/app/front-end
+      - /app/frontend/node_modules
+      - .:/app/frontend
     command: ["npm", "run", "test"]
     # tty: true
