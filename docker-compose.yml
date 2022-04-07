@@ -1,0 +1,38 @@
+# version: "3"
+
+# services:
+#   web:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.dev
+#     ports:
+#       - "6666:3000"
+#     volumes:
+#       - /var/app/frontend/node_modules
+#       - .:/var/app/frontend
+#     stdin_open: true
+#     tty: true
+version: "3"
+
+services:
+  web:
+    build: #If we putted '.' it will assume that we've got Dockerfile
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/front-end/node_modules
+      - .:/app/front-end
+    tty: true
+
+  # test runner
+  tests:
+    build: #If we putted '.' it will assume that we've got Dockerfile
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/front-end/node_modules
+      - .:/app/front-end
+    command: ["npm", "run", "test"]
+    # tty: true

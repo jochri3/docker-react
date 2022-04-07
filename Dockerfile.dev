@@ -1,0 +1,23 @@
+# FROM node:14-alpine
+
+# WORKDIR /var/app/frontend
+
+# COPY ./package.json ./
+
+# RUN npm install
+
+# COPY . .
+
+# CMD ["npm","start"]
+FROM node:14-alpine
+
+WORKDIR /app/front-end
+
+COPY ./package.json .
+
+RUN npm install
+
+# COPY . . => It our case it's not necessary unless we need to get ride of docker-compose or use this config to prod Dockerfile
+
+
+CMD ["npm","start"]
