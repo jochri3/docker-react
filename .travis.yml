@@ -1,0 +1,11 @@
+sudo: required #Telling travs that we need SU permission in order to execute that build
+services:
+  - docker #We tell travis that docker cli is needed in order to execute the build
+
+#Set of instructions to be executed before our test can run
+before_install:
+  - docker build -t jochri3/docker-react -f Dockerfile.dev .
+
+script:
+  # Travis CI is only concerned by the status code
+  - docker run jochri3/docker-react npm run test -- --coverage #This is for quiting the test
