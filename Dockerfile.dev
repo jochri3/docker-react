@@ -11,7 +11,7 @@
 # CMD ["npm","start"]
 FROM node:14-alpine
 
-WORKDIR /app/front-end
+WORKDIR /app/frontend
 
 COPY ./package.json .
 
@@ -19,5 +19,7 @@ RUN npm install
 
 # COPY . . => It our case it's not necessary unless we need to get ride of docker-compose or use this config to prod Dockerfile
 
+#For CI server
+COPY . . 
 
 CMD ["npm","start"]
