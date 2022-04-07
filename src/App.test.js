@@ -8,7 +8,7 @@ test("renders learn react link", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test("renders learn react abc", () => {
+test("renders Alexandro Del Pierro", () => {
   const { getByText } = render(<App />);
   const linkElement = getByText(/Alex/i);
   expect(linkElement).toBeInTheDocument();
