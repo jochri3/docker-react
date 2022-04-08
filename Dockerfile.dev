@@ -9,7 +9,7 @@
 # COPY . .
 
 # CMD ["npm","start"]
-FROM node:14-alpine
+FROM node:16-alpine
 
 WORKDIR /app/frontend
 
@@ -22,4 +22,4 @@ RUN npm install
 #For CI server
 COPY . . 
 
-CMD ["npm","start"]
+CMD ["npm","run","start"]

@@ -13,3 +13,9 @@ test("renders Alexandro Del Pierro", () => {
   const linkElement = getByText(/Alex/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("renders Alexandro Del D", () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/Alex/i);
+  expect(linkElement).toBeInTheDocument();
+});
