@@ -15,6 +15,9 @@ RUN npm run build
 # 2 - Run phase
 
 FROM nginx
+
+#This is for prod : Elastic beanstalk => port that receives incoming trafic
+EXPOSE 80 
 COPY --from=builder /app/build /usr/share/nginx/html
 
 
