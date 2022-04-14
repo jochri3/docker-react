@@ -1,0 +1,5 @@
+En septembre 2020, Elastic Beanstalk a introduit l'option EnhancedHealthAuthEnabled. Les instances qui signalent des informations améliorées sur l'état exigerent des autorisations lorsque cette valeur est définie sur « true ». Si vous utilisez une politique gérée par Elastic Beanstalk pour le profil d'instance de votre environnement (par défaut lorsque vous utilisez la console Elastic Beanstalk ou la CLI EB), vous pouvez activer cette option en toute sécurité.
+
+À partir du 10 septembre 2021 nous définissons la valeur par défaut pour cette option sur « true » pour tous les nouveaux environnements (sans impact sur les environnements existants)
+
+Si vous utilisez un profil d'instance personnalisé au lieu d'une politique gérée, votre environnement peut afficher le statut d’intégrité Aucune donnée. Cela se produit parce que les instances ne sont pas autorisées pour l'action qui communique les données d'intégrité améliorée au service. Pour autoriser l'action, ajoutez l'autorisation à votre profil d'instance conformément à Autorisation d'intégrité améliorée  dans le Guide du développeur Amazon Elastic Beanstalk.
