@@ -14,9 +14,9 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "docker-react"
-  env: "Dockerreact-env"
+  #region: "us-east-1"
+  application: "docker-react"
+  #env: "Dockerreact-env"
   bucket_name: "elasticbeanstalk-us-east-1-699701020928" #s3 bucket : Travis CI will zip your file then send then to AWS s3(hard drive for static files)
   bucket_path: "docker-react"
   on:
