@@ -18,7 +18,7 @@ function App() {
         >
           {/* Learn React */}
           {/* Mongo Beti */}
-          Alexandro Del Pierro
+          Alexandro Del Pierro.
         </a>
       </header>
     </div>
