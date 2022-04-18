@@ -13,15 +13,22 @@ script:
 # For Deployment
 
 deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "react-docker"
-  env: "Reactdocker-env"
-  bucket_name: "elasticbeanstalk-us-east-1-699701020928" #s3 bucket : Travis CI will zip your file then send then to AWS s3(hard drive for static files)
-  # bucket_path: "react-docker"
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    $AWS_SECRET_KEY
-    #secure: "$AWS_SECRET_KEY"
+  - provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "react-docker"
+    env: "react-docker-env"
+    bucket_name: "elasticbeanstalk-us-east-1-699701020928" #s3 bucket : Travis CI will zip your file then send then to AWS s3(hard drive for static files)
+    bucket_path: "react-docker"
+    on:
+      branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+      $AWS_SECRET_KEY
+      #secure: "$AWS_SECRET_KEY"
+  
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
+    on:
+      branch: develop
