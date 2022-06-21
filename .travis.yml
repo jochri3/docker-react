@@ -25,7 +25,7 @@ deploy:
     secret_access_key:
       $AWS_SECRET_KEY
       #secure: "$AWS_SECRET_KEY"
-  
+
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
